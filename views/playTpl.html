@@ -1,12 +1,15 @@
+<h1 class="w3-center">Select your choice. Then the Bot will pick.</h1>
 <div class="w3-container" style="display:flex; margin-top: 50px">
   <div class="playerColumn">
     <h2 class="w3-center">{{ playerName }}</h2>
+    <h2 class="w3-center">{{ playerCount }}</h2>
     <a ng-if="choice === '' || choice === 'rock'" ng-click="checkBot('rock')" class="w3-button"><img src="./media/rock.png" alt=""></a>
     <a ng-if="choice === '' || choice === 'paper'" ng-click="checkBot('paper')" class="w3-button"><img src="./media/paper.png" alt=""></a>
     <a ng-if="choice === '' || choice === 'scissors'" ng-click="checkBot('scissors')" class="w3-button"><img src="./media/scissors.png" alt=""></a>
   </div>
   <div class="botColumn">
     <h2 class="w3-center">The Bot</h2>
+    <h2 class="w3-center">{{ botCount }}</h2>
     <a ng-if="bot === 'rock'" class="w3-button w3-hover-none"><img src="./media/rock.png" alt=""></a>
     <a ng-if="bot === 'paper'" class="w3-button w3-hover-none"><img src="./media/paper.png" alt=""></a>
     <a ng-if="bot === 'scissors'" class="w3-button w3-hover-none"><img src="./media/scissors.png" alt=""></a>
@@ -14,7 +17,10 @@
 </div>
 <div ng-hide="message === ''" class="w3-center">
   <h1>{{ message }}</h1>
-  <div ng-click="reset()" class="w3-button w3-lime">
+  <div ng-click="playAgain()" class="w3-button w3-lime w3-hover-blue-gray">
     Play Again
+  </div>
+  <div ng-click="reset()" class="w3-button w3-lime w3-hover-blue-gray">
+    Start Over
   </div>
 </div>

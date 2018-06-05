@@ -2,11 +2,10 @@ angular.module('rpsApp').controller('playCtl', function($scope, $state) {
 
   $scope.playerName = $state.params.name;
   $scope.choice = '';
-  // $scope.rock;
-  // $scope.paper;
-  // $scope.scissors;
   $scope.bot = '';
   $scope.message = '';
+  $scope.playerCount = 0;
+  $scope.botCount = 0;
 
   $scope.checkBot = function(choice) {
     $scope.choice = choice;
@@ -23,10 +22,16 @@ angular.module('rpsApp').controller('playCtl', function($scope, $state) {
     getWinner($scope.choice, $scope.bot);
   };
 
-  $scope.reset = function() {
+  $scope.playAgain = function() {
     $scope.choice = '';
     $scope.bot = '';
     $scope.message = '';
+  }
+
+  $scope.reset = function() {
+    $scope.playAgain();
+    $scope.playerCount = 0;
+    $scope.botCount = 0;
   }
 
   function getRandomBot(min, max) {
@@ -36,22 +41,12 @@ angular.module('rpsApp').controller('playCtl', function($scope, $state) {
   };
 
   function getWinner(player, bot) {
-    if (player === 'rock' && bot === 'scissors') {
+    if ((player === 'rock' && bot === 'scissors') || (player === 'paper' && bot === 'rock') || (player === 'scissors' && bot === 'paper')) {
+      $scope.playerCount++;
       $scope.message = $scope.playerName + ', you win!';
     }
-    else if (player === 'paper' && bot === 'rock') {
-      $scope.message = $scope.playerName + ', you win!';
-    }
-    else if (player === 'scissors' && bot === 'paper') {
-      $scope.message = $scope.playerName + ', you win!';
-    }
-    else if (player === 'rock' && bot === 'paper') {
-      $scope.message = $scope.playerName + ', you lose.';
-    }
-    else if (player === 'paper' && bot === 'scissors') {
-      $scope.message = $scope.playerName + ', you lose.';
-    }
-    else if (player === 'scissors' && bot === 'rock') {
+    else if ((player === 'rock' && bot === 'paper') || (player === 'paper' && bot === 'scissors') || (player === 'scissors' && bot === 'rock')) {
+      $scope.botCount++;
       $scope.message = $scope.playerName + ', you lose.';
     }
     else {
