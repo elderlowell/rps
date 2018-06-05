@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="rpsApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <link rel="icon" href="/media/profile.ico" type="image/x-icon"/ >
+    <base href="/" />
+    <title></title>
+  </head>
+  <body>
+    <div class="w3-bar w3-lime">
+      <a href="http://www.jalowell.com" class="w3-bar-item w3-button w3-blue w3-hover-blue-gray">
+        Return to my Homepage
+      </a>
+      <div ui-sref="home" class="w3-bar-item w3-button w3-hover-blue-gray">
+        Rock Paper Scissors
+      </div>
+    </div>
+
+    <ui-view></ui-view>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.18/angular-ui-router.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/mainCtl.js"></script>
+  <script src="./js/playCtl.js"></script>
+  </body>
+</html>

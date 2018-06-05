@@ -1,0 +1,20 @@
+<div class="w3-container" style="display:flex; margin-top: 50px">
+  <div class="playerColumn">
+    <h2 class="w3-center">{{ playerName }}</h2>
+    <a ng-if="choice === '' || choice === 'rock'" ng-click="checkBot('rock')" class="w3-button"><img src="./media/rock.png" alt=""></a>
+    <a ng-if="choice === '' || choice === 'paper'" ng-click="checkBot('paper')" class="w3-button"><img src="./media/paper.png" alt=""></a>
+    <a ng-if="choice === '' || choice === 'scissors'" ng-click="checkBot('scissors')" class="w3-button"><img src="./media/scissors.png" alt=""></a>
+  </div>
+  <div class="botColumn">
+    <h2 class="w3-center">The Bot</h2>
+    <a ng-if="bot === 'rock'" class="w3-button w3-hover-none"><img src="./media/rock.png" alt=""></a>
+    <a ng-if="bot === 'paper'" class="w3-button w3-hover-none"><img src="./media/paper.png" alt=""></a>
+    <a ng-if="bot === 'scissors'" class="w3-button w3-hover-none"><img src="./media/scissors.png" alt=""></a>
+  </div>
+</div>
+<div ng-hide="message === ''" class="w3-center">
+  <h1>{{ message }}</h1>
+  <div ng-click="reset()" class="w3-button w3-lime">
+    Play Again
+  </div>
+</div>
