@@ -7,6 +7,11 @@ html, body {
   padding: 0;
 }
 
+body {
+  font-family: 'Open Sans', Sans-Serif;
+  font-Size: 15px;
+}
+
 .form {
   display: flex;
   justify-content: center;
