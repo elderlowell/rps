@@ -31,3 +31,12 @@ img {
   max-width: 200px;
   margin: 10px;
 }
+
+.logo-words {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 20px;
+  border: solid 2px white;
+  padding: 5px;
+}
