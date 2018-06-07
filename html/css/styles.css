@@ -10,7 +10,6 @@ html, body {
 .form {
   display: flex;
   justify-content: center;
-  margin: 50px auto;
 }
 
 .playerColumn {
@@ -27,7 +26,12 @@ html, body {
   align-items: center;
 }
 
-img {
+/* img {
   max-width: 200px;
   margin: 10px;
+} */
+
+.footer {
+  position: fixed;
+  bottom: 0;
 }
